@@ -1,0 +1,20 @@
+body {
+  background-color:gray
+}
+
+h1 {
+  font-size:xx-large;
+  font-weight:bold;
+  color:blue;
+}
+
+h2 {
+  font-size:x-large;
+  font-style:italic;
+}
+
+section {
+  background-color:white;
+  width:max-content;
+  margin-bottom:20px;
+}
