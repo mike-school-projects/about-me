@@ -14,7 +14,17 @@ h2 {
 }
 
 section {
-  background-color:white;
+  background-color: white;
   width:max-content;
   margin-bottom:20px;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type:disc;
 }
