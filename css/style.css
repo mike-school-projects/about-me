@@ -44,6 +44,7 @@ section {
   border-style:solid;
   border-color:red;
   border-width:10px;
+
 }
 
 ol {
@@ -54,4 +55,6 @@ ol {
 ul {
   list-style-position: inside;
   list-style-type:disc;
+
 }
+
