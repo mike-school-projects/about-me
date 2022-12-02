@@ -37,7 +37,6 @@ function facts(){
   alert('Let us play a game about some basic facts about me.  Please answer the following 5 questions with yes/no or y/n');
 
   for(i=0; i<5; i++){
-    // Get guess and validate data is yes, no, y, or n.  3 tries to get good input.
     for(j=0; j<3; j++){
       if(j===0){
         guess = prompt(question[i][0]);
@@ -63,17 +62,14 @@ function facts(){
     // Compare guess to answer
     if (guess === question[i][1]) {
       alert(`The answer to "${question[i][0]}" is correct!`);
-      // console.log(`The anwer to "${question}" is correct!`);
       numCorrect++;
     } else {
       alert(`The answer to "${question[i][0]}" is incorrect.`);
-      // console.log(`The anwer to "${question}" is incorrect.`);
     }
   }
 }
 
 // Guessing Number Game FUNCTION
-// Guessing Number Game: Variables
 function number(){
   let guessingGameAnswer = 7;
   let guessingGameGuess = 0;
@@ -105,7 +101,10 @@ function number(){
 
 // Guessing Movie Game FUNCTION
 function movie (){
-  // Guessing Movie Game: Local variables
+  let movieGuess = [];
+  let movieNumCorrect=0;
+  let i = 0;
+  let j = 0;
   let movieList = [
     //  Answer      If correctly guessed
     ['Star Wars', false],
@@ -113,21 +112,20 @@ function movie (){
     ['The Matrix', false],
   ];
 
-  let movieGuess = [];
-  let movieNumCorrect=0;
-  let i = 0;
-  let j = 0;
-
   // Guessing Movie Game: initial prompt
   alert('Guess my top 3 favorite movie series.  You have 6 chances');
 
   // First loop: 6 guesses
   for (i = 0; i < 6; i++) {
     movieGuess[i] = prompt(`Guess #${i + 1}`);
+    if (movieGuess[i] === null){
+      movieGuess[i] = 'a';
+    }
+    movieGuess[i] = movieGuess[i].toLowerCase();
 
     // Second loop: compare against all 3 answers
     for (j = 0; j < 3; j++) {
-      if (movieGuess[i] === movieList[j][0] && movieList[j][1] !== true) {
+      if (movieGuess[i] === movieList[j][0].toLowerCase() && movieList[j][1] !== true) {
         alert('Correct!');
         movieNumCorrect++;
         movieList[j][1] = true;
